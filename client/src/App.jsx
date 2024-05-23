@@ -71,23 +71,6 @@ function App() {
       <div className='leading-relaxed'>
         <Toaster position='bottom-center' toastOptions={{ duration: 2000, success: { iconTheme: { primary: '#059669', secondary: 'white' } } }} />
         <Routes>
-          {/* general routes */}
-          <Route path='/' element={<Index />} />
-          <Route path='/explore' element={<Explore />} />
-          <Route path='/campaign/:id' element={<Campaign />} />
-          <Route path='/howitworks' element={<Howitworks />} />
-          <Route path='/blog' element={<Blog />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/s' element={<Search />} />
-          <Route path='/search/:searchTerm' element={<SearchResult />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/forgotPassword" element={<ForgotPassword />} />
-          <Route path="/reset-password/:token" element={<ResetPassword />} />
-
-          <Route path='/*' element={<Error404 />} />
-
-
 
           {/* general user access */}
           {isAuthenticated ?
@@ -112,8 +95,7 @@ function App() {
             </>
           }
 
-
-
+          {/* admin access */}
           {user?.role === 1 && isAuthenticated &&
             <>
               <Route path='/admin/dashboard' element={<Dashboard />} />
@@ -130,11 +112,25 @@ function App() {
 
               <Route path='/profile' element={<Profile />} />
               <Route path='/*' element={<Login />} />
-
-
             </>
           }
           <Route render={() => <Navigate to="/" />} />
+
+
+          {/* general routes */}
+          <Route path='/' element={<Index />} />
+          <Route path='/explore' element={<Explore />} />
+          <Route path='/campaign/:id' element={<Campaign />} />
+          <Route path='/howitworks' element={<Howitworks />} />
+          <Route path='/blog' element={<Blog />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/s' element={<Search />} />
+          <Route path='/search/:searchTerm' element={<SearchResult />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/forgotPassword" element={<ForgotPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
+          <Route path='/*' element={<Error404 />} />
 
         </Routes>
       </div>
