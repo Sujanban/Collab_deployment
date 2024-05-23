@@ -50,7 +50,7 @@ import { disableReactDevTools } from '@fvilers/disable-react-devtools'
 
 
 
-axios.defaults.baseURL = "http://localhost:5000"
+axios.defaults.baseURL = "https://collab-9000.onrender.com"
 axios.defaults.withCredentials = true
 
 function App() {
