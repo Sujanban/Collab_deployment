@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Cambo&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* .madimi-one-regular {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+* {
+  /* font-family: "Cambo", serif; */
+  box-sizing: border-box;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Poppins", sans-serif;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+.home{
+  background: url(https://img.freepik.com/free-vector/white-abstract-background-design_361591-1242.jpg?w=1380&t=st=1716129985~exp=1716130585~hmac=36385a8245137005569e6a1ac9907c104ead59f24c8d30cb01aa824cd65a1a16);
+  
+}
+
+.sub_menu {
+  border: 2px solid black;
+}
+.sub_menu:hover {
+  display: block;
+  border: 2px solid red;
+}
+
+.team_img {
+  background: url(https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvNDc5LW1rLTk2OTAucG5n.pnglient);
+}
+
+.explore_banner {
+  background: url(https://images.unsplash.com/photo-1599113615507-13f78150fb2e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+}
+
+
+.blog_hero {
+  height: 90vh;
+  background: url(https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+}
+
+
+@keyframes pop-in {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.popup {
+  animation:pop-in 0.2s;
+}
