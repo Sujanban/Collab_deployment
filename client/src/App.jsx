@@ -14,7 +14,6 @@ import Howitworks from './pages/Howitworks'
 import Contact from './pages/Contact'
 import Blog from './pages/Blog'
 import Campaign from './pages/Campaign'
-import Error404 from './pages/Error404'
 import MyCampaign from './pages/MyCampaign'
 import ManageCampaign from './pages/ManageCampaign'
 import CampaignStoryUpdates from './pages/CampaignStoryUpdates'
@@ -42,16 +41,9 @@ import { fetchUserProfile } from './app/feature/userSlice'
 import Banks from './pages/admin/Banks'
 import Payouts from './pages/admin/Payouts'
 import ResetPassword from './pages/ResetPassword'
-import Loader from './components/Loader'
 import { FaSpinner } from 'react-icons/fa6'
 
-
-
-
-
-
-
-axios.defaults.baseURL = "http://localhost:5000"
+axios.defaults.baseURL = "https://collab-9000.onrender.com/"
 axios.defaults.withCredentials = true
 
 function App() {
