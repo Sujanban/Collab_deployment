@@ -39,7 +39,6 @@ app.post(
     let event;
     try {
       event = stripe.webhooks.constructEvent(request.body, sig, endpointSecret);
-      console.log(event.type);
     } catch (err) {
       console.log(err);
       response.status(400).send(`Webhook Error: ${err.message}`);
@@ -48,7 +47,6 @@ app.post(
     switch (event.type) {
       case "checkout.session.completed":
         const paymentIntent = event.data.object;
-        console.log(paymentIntent);
         try {
           const sessionId = paymentIntent.id;
           const amount = paymentIntent.amount_total / 100;
