@@ -42,6 +42,8 @@ import { fetchUserProfile } from './app/feature/userSlice'
 import Banks from './pages/admin/Banks'
 import Payouts from './pages/admin/Payouts'
 import ResetPassword from './pages/ResetPassword'
+import Loader from './components/Loader'
+import { FaSpinner } from 'react-icons/fa6'
 
 
 
@@ -56,22 +58,25 @@ function App() {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   const user = useSelector(state => state.user.data)
+  const { isLoading } = useSelector(state => state.user);
 
+  useEffect(() => {
+    dispatch(fetchUserProfile());
 
-useEffect(()=>{
-  dispatch(fetchUserProfile());
-
-},[])
+  }, [])
 
 
   return (
     <GoogleOAuthProvider clientId="113038173634-mal1sarh7mrqbaq1k833nt7goushh797.apps.googleusercontent.com">
       <div className='leading-relaxed'>
-        <Toaster position='bottom-center' toastOptions={{ duration: 2000 , success: { iconTheme: { primary: '#059669', secondary: 'white' }} }} />
+        {
+          isLoading &&
+          <div className='h-screen w-screen overflow-hidden absolute top-0 left-0 right-0 bottom-0 bg-slate-100 z-[999999] flex items-center justify-center'>
+            <FaSpinner className='text-emerald-900 animate-spin' size={50} />
+          </div>
+        }
+        <Toaster position='bottom-center' toastOptions={{ duration: 2000, success: { iconTheme: { primary: '#059669', secondary: 'white' } } }} />
         <Routes>
-          
-
-
           {/* general user access */}
           {isAuthenticated ?
             <>
@@ -93,26 +98,24 @@ useEffect(()=>{
               <Route path='/login' element={<Login />} />
             </>
           }
-
-          {user?.role === 1 && isAuthenticated && 
-          <>
-            <Route path='/admin/dashboard' element={<Dashboard />} />
-            <Route path='/admin/campaigns' element={<Campaigns />} />
-            <Route path='/admin/createcampaign' element={<AdminCreateCampaign />} />
-            <Route path='/admin/editcampaign/:id' element={<AdminEditCampaign />} />
-            <Route path='/admin/categories' element={<Categories />} />
-            <Route path='/admin/editcategory/:id' element={<AdminEditCategory />} />
-            <Route path='/admin/users' element={<Users />} />
-            <Route path='/admin/donations' element={<Donations />} />
-            <Route path='/admin/donations/donation/:id' element={<Donation />} />
-            <Route path='/admin/banks' element={<Banks />} />
-            <Route path='/admin/payouts' element={<Payouts />} />
-            <Route path='/profile' element={<Profile />} />
-            <Route path='/*' element={<Login />} />
-          </>
+          {user?.role === 1 && isAuthenticated &&
+            <>
+              <Route path='/admin/dashboard' element={<Dashboard />} />
+              <Route path='/admin/campaigns' element={<Campaigns />} />
+              <Route path='/admin/createcampaign' element={<AdminCreateCampaign />} />
+              <Route path='/admin/editcampaign/:id' element={<AdminEditCampaign />} />
+              <Route path='/admin/categories' element={<Categories />} />
+              <Route path='/admin/editcategory/:id' element={<AdminEditCategory />} />
+              <Route path='/admin/users' element={<Users />} />
+              <Route path='/admin/donations' element={<Donations />} />
+              <Route path='/admin/donations/donation/:id' element={<Donation />} />
+              <Route path='/admin/banks' element={<Banks />} />
+              <Route path='/admin/payouts' element={<Payouts />} />
+              <Route path='/profile' element={<Profile />} />
+              <Route path='/*' element={<Login />} />
+            </>
           }
           <Route render={() => <Navigate to="/" />} />
-
           {/* general routes */}
           <Route path='/' element={<Index />} />
           <Route path='/explore' element={<Explore />} />
@@ -126,9 +129,6 @@ useEffect(()=>{
           <Route path="/login" element={<Login />} />
           <Route path="/forgotPassword" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
-          <Route path='/*' element={<Error404 />} />
-
-
         </Routes>
       </div>
     </GoogleOAuthProvider>
