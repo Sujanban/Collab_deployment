@@ -57,8 +57,6 @@ function App() {
     dispatch(fetchUserProfile());
   }, [dispatch]);
 
-
-
   return (
     // <GoogleOAuthProvider clientId="113038173634-mal1sarh7mrqbaq1k833nt7goushh797.apps.googleusercontent.com">
     <div className='leading-relaxed'>
