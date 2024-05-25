@@ -38,7 +38,6 @@ const Users = () => {
 
     const deleteUser = async (id) => {
         try {
-            console.log(id)
             const res = await axios.delete(`/api/user/deleteUser/${id}`);
             if (res.data.error) {
                 return toast.error(res.data.error)

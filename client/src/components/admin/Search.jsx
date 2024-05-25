@@ -33,8 +33,7 @@ const Search = ({ searchQuery, onSearch }) => {
 
     const handleLogout = () => {
         dispatch(logoutUser()).then((res) => {
-            if (res.payload) {
-                console.log(res.payload.message);
+            if (res.payload) { 
                 window.location.reload();
                 navigate('/');
             }

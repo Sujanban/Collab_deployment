@@ -27,7 +27,6 @@ const Login = () => {
             }
         );
         if (res.data.message) {
-            console.log(res.data.user);
             localStorage.setItem('user', JSON.stringify(res.data.user));
             navigate('/');
         }
@@ -39,7 +38,6 @@ const Login = () => {
         e.preventDefault();
         dispatch(loginUser(user)).then((res) => {
             if (res.payload?.email) {
-                console.log(res.payload);
                 navigate('/');
             }
         })
