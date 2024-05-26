@@ -83,7 +83,7 @@ export const logoutUser = createAsyncThunk("logoutUser", async () => {
 const user = createSlice({
   name: "user",
   initialState: {
-    data: [],
+    data: null,
     isAuthenticated: false,
     isLoading: false,
     errorMessage: null,

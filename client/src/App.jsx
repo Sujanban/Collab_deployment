@@ -44,8 +44,9 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUserProfile } from './app/feature/userSlice';
 
+axios.defaults.baseURL = process.env.HOST_URL;
 // axios.defaults.baseURL = "http://localhost:5000/";
-axios.defaults.baseURL = "https://collab-9000.onrender.com/";
+// axios.defaults.baseURL = "https://collab-9000.onrender.com/";
 axios.defaults.withCredentials = true;
 
 function App() {
