@@ -36,6 +36,8 @@ const deleteUser = async (req, res) => {
     await Campaign.deleteMany({ campaignOwner: userId });
     await Story.deleteMany({ userId: userId });
     await Donation.deleteMany({ userId: userId });
+    await BankAccount.deleteMany({ userId: userId });
+    await PayoutRequest.deleteMany({ userId: userId });
 
     return res.status(200).json({ message: "User deleted successfully" });
   } catch (err) {
