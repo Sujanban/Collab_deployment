@@ -105,7 +105,7 @@ const Payouts = () => {
                                             <div className='text-sm md:text-md'>
                                                 <p>{request.userId?.email}</p>
                                                 <div className='flex items-center space-x-4'>
-                                                    <h1 className='font-medium'> $ {request.amount}</h1>
+                                                    <h1 className='font-medium'>{'$' + request.amount}</h1>
                                                     <div className='flex rounded-full px-1 bg-red-50 items-center space-x-1'>
                                                         <div className={`w-2 h-2 rounded-full animate-pulse bg-red-500`}></div>
                                                         <span className='text-sm'>{request.status}</span>
