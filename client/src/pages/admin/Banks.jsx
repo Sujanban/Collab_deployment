@@ -30,7 +30,7 @@ const Banks = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const indexOfLastItem = currentPage * numberOfItems;
     const indexOfFirstItem = indexOfLastItem - numberOfItems;
-    const currentItems = bank.length && bank.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = bank?.length && bank.slice(indexOfFirstItem, indexOfLastItem);
 
 
     const handleSort = (sort) => { }
@@ -102,8 +102,8 @@ const Banks = () => {
                                                     currentItems && currentItems.map((item) =>
                                                         <tr key={item._id} className='text-slate-600 text-xs sm:text-sm border-b'>
                                                             <td scope="col" className="px-3 md:px-6 py-3">{++count}</td>
-                                                            <td scope="col" className="px-3 md:px-6 py-3 font-medium ">{item.userId.email}</td>
-                                                            <td scope="col" className="px-3 md:px-6 py-3 flex items-center space-x-2"><span>{item.stripeAccountId}</span><FaStripe className="text-purple-500" size={35} /></td>
+                                                            <td scope="col" className="px-3 md:px-6 py-3 font-medium ">{item?.userId?.email}</td>
+                                                            <td scope="col" className="px-3 md:px-6 py-3 flex items-center space-x-2"><span>{item?.stripeAccountId}</span><FaStripe className="text-purple-500" size={35} /></td>
                                                             <td scope="col" className="px-3 md:px-6 py-3">{item.userId?.accountBalance}</td>
                                                         </tr>
                                                     )
