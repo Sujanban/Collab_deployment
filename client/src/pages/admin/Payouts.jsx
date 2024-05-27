@@ -8,7 +8,7 @@ import Loader from '../../components/Loader';
 import Pagination from '../../components/Pagination';
 import { IoFunnelOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
-import {LuChevronRight} from 'react-icons/lu'
+import { LuChevronRight } from 'react-icons/lu'
 
 const Payouts = () => {
     const dispatch = useDispatch();
@@ -98,17 +98,14 @@ const Payouts = () => {
                         <div className='col-span-2'>
                             <h1 className='py-2 text-sm md:text-md pb-2 font-medium'>Payout Requests</h1>
                             <div className='md:p-4 bg-white w-full rounded-xl'>
-                                <div className='grid grid-cols-3 gap-4'>
+                                <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
                                     {pendingPayouts?.length ? pendingPayouts.map((request, index) => (
                                         <div key={index} className="flex space-x-4 shadow p-4 bg-white w-full rounded-xl">
                                             <img src='https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg' className='w-10 h-10 rounded-full object-cover' alt='User' />
-                                            <div>
-                                                <div>
-                                                    <h1 className='font-bold'>{request.userId?.firstName} {request.userId?.lastName}</h1>
-                                                    <p>{request.userId?.email}</p>
-                                                </div>
+                                            <div className='text-sm md:text-md'>
+                                                <p>{request.userId?.email}</p>
                                                 <div className='flex items-center space-x-4'>
-                                                    <h1 className='font-bold'> $ {request.amount}</h1>
+                                                    <h1 className='font-medium'> $ {request.amount}</h1>
                                                     <div className='flex rounded-full px-1 bg-red-50 items-center space-x-1'>
                                                         <div className={`w-2 h-2 rounded-full animate-pulse bg-red-500`}></div>
                                                         <span className='text-sm'>{request.status}</span>
