@@ -2,6 +2,8 @@ const User = require("../models/user.model");
 const Campaign = require("../models/campaign.model");
 const Story = require("../models/story.model");
 const Donation = require("../models/donation.model");
+const BankAccount = require("../models/bank.model");
+const PayoutRequest = require("../models/payoutRequest.model");
 
 const fetchUsers = async (req, res) => {
   try {
