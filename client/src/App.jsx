@@ -85,6 +85,8 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/forgotPassword' element={<ForgotPassword />} />
         <Route path='/reset-password/:token' element={<ResetPassword />} />
+        <Route path='/createCampaign' element={isAuthenticated ? <CreateCampaign /> : <Login />} />
+
         <Route path='/*' element={<Error404 />} />
 
         {/* Authenticated user routes */}
