@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/admin/Navbar'
 import Search from '../../components/admin/Search'
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { getBanks } from "../../app/feature/bankSlice";
 import { FaStripe } from "react-icons/fa";
@@ -10,8 +9,6 @@ import { IoFunnelOutline } from 'react-icons/io5'
 import Loader from '../../components/Loader';
 import { LuChevronRight } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
-
-
 
 const Banks = () => {
     let count = 0;

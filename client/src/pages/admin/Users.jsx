@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/admin/Navbar'
 import Search from '../../components/admin/Search'
-import { LuChevronRight, LuHome } from "react-icons/lu";
+import { LuChevronRight } from "react-icons/lu";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCampaign } from '../../app/feature/campaignSlice'
 import { VscTrash } from 'react-icons/vsc';
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Pagination from '../../components/Pagination';
 import { IoFunnelOutline } from 'react-icons/io5'
 import Loader from '../../components/Loader';

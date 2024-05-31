@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addCategory, fetchCategory } from '../../app/feature/categorySlice';
 import { VscEdit, VscTrash } from "react-icons/vsc";
 import { LuChevronRight } from "react-icons/lu";
-import { FaChevronLeft, FaChevronRight, FaSpinner } from "react-icons/fa";
+import { FaSpinner } from "react-icons/fa";
 import { TiPen } from "react-icons/ti";
 import Pagination from '../../components/Pagination';
 import Loader from '../../components/Loader';
