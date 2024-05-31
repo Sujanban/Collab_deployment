@@ -89,14 +89,12 @@ const Dashboard = () => {
                     </div>
 
                     <div className='py-2 md:py-0 md:p-4 '>
-                        {/* donation stats grid */}
                         <DonationStats donations={donations} />
                     </div>
 
                     <div className='p-4 grid grid-cols-3'>
                         <div className='p-4 bg-white col-span-2 rounded-xl shadow'>
                             <h1 className='pb-2 font-medium'>Donation Leaderboard</h1>
-                            {/* reactjs chart */}
                             <Bar options={{ responsive: true }} data={chartData} />
                         </div>
                     </div>
