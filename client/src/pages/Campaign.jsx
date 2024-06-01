@@ -114,7 +114,7 @@ const Campaign = () => {
 
 
 
-                       
+
 
 
                         <div className='py-2 font-medium flex items-center space-x-2'>
@@ -189,7 +189,10 @@ const Campaign = () => {
                         {
                             user
                                 ?
-                                <CreateDonation id={id} />
+                                <div className='grid'>
+                                    <CreateDonation id={id} />
+                                    {/* <KhaltiCheckout id={id}/> */}
+                                </div>
                                 :
                                 <div className='relative'>
                                     <form className=' py-4 blur'>
