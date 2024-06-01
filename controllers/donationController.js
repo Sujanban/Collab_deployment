@@ -74,8 +74,8 @@ const createKhaltiPayment = async (req, res) => {
     }
 
     const payload = {
-      return_url: "http://localhost:5173/success/",
-      website_url: "http://localhost:5173/",
+      return_url: process.env.PAYMENT_SUCCESS_URL,
+      website_url: process.env.HOST_URL,
       amount: amount * 100,
       purchase_order_id: "test12",
       purchase_order_name: "test",
@@ -109,7 +109,7 @@ const createKhaltiPayment = async (req, res) => {
       console.log(khaltiResponse.data);
       res.json(khaltiResponse.data);
 
-      storing the response to the database
+      // storing the response to the database
       const donation = new Donation({
         campaignId: campaignId,
         userId: userId,
