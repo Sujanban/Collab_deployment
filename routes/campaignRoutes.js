@@ -69,6 +69,4 @@ router.delete(
   deleteCampaign
 );
 
-// UPLOAD IMAGE
-
 module.exports = router;
