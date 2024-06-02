@@ -77,7 +77,7 @@ app.post(
 
           // Increase the account balance of the campaign owner
           const campaignOwner = await User.findById(campaign.campaignOwner);
-          campaignOwner.accountBalance += amount; // Assuming account balance is in the user document
+          campaignOwner.accountBalance += amount;
           await campaignOwner.save();
         } catch (error) {
           console.error("Error handling  payment:", error);
