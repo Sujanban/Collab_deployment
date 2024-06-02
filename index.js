@@ -60,6 +60,8 @@ app.post(
             userId: user._id,
             campaignId: campaign._id,
             amount: amount,
+            paymentMethod: "Stripe",
+            transactionId: paymentIntent.id,
             session: sessionId,
           });
           await donation.save();
